@@ -1,0 +1,118 @@
+categories:
+
+  - name: "AI & Research"
+    feeds:
+      - name: "Import AI"
+        url: "https://jack-clark.net/feed"
+        weight: 1.3
+        max_articles: 10
+
+      - name: "The Batch (deeplearning.ai)"
+        url: "https://www.deeplearning.ai/the-batch/feed"
+        weight: 1.2
+        max_articles: 10
+
+      - name: "arXiv - AI"
+        url: "http://arxiv.org/rss/cs.AI"
+        weight: 1.1
+        max_articles: 5
+
+      - name: "arXiv - Machine Learning"
+        url: "http://arxiv.org/rss/cs.LG"
+        weight: 1.0
+        max_articles: 5
+
+      - name: "arXiv - Economics & Tech Policy"
+        url: "http://arxiv.org/rss/econ.GN"
+        weight: 1.1
+        max_articles: 3
+
+  - name: "Enterprise & ERP"
+    feeds:
+      - name: "Diginomica"
+        url: "https://diginomica.com/feed"
+        weight: 1.4
+        max_articles: 10
+
+      - name: "Gartner Blog"
+        url: "https://blogs.gartner.com/feed"
+        weight: 1.3
+        max_articles: 8
+
+      - name: "ZDNet Enterprise"
+        url: "https://www.zdnet.com/topic/enterprise-software/rss.xml"
+        weight: 1.2
+        max_articles: 8
+
+  - name: "Tech Strategy & Analysis"
+    feeds:
+      - name: "Platformer"
+        url: "https://www.platformer.news/feed"
+        weight: 1.2
+        max_articles: 8
+
+      - name: "404 Media"
+        url: "https://404media.co/feed"
+        weight: 1.1
+        max_articles: 6
+
+      - name: "MIT Technology Review"
+        url: "https://www.technologyreview.com/feed"
+        weight: 1.2
+        max_articles: 8
+
+  - name: "Broad Tech News"
+    feeds:
+      - name: "Wired"
+        url: "https://www.wired.com/feed/rss"
+        weight: 1.0
+        max_articles: 8
+
+      - name: "The Verge"
+        url: "https://www.theverge.com/rss/index.xml"
+        weight: 0.9
+        max_articles: 8
+
+      - name: "Axios"
+        url: "https://www.axios.com/feed"
+        weight: 1.0
+        max_articles: 6
+
+  - name: "Community & Practitioner"
+    feeds:
+      - name: "Hacker News"
+        url: "https://news.ycombinator.com/rss"
+        weight: 1.0
+        max_articles: 15
+
+competitor_keywords:
+  - "Salesforce"
+  - "SAP"
+  - "Workday"
+  - "Microsoft Dynamics"
+  - "Oracle Fusion"
+  - "Sage"
+  - "ServiceNow"
+
+high_priority_keywords:
+  - "agentic AI"
+  - "AI agents"
+  - "enterprise AI"
+  - "ERP"
+  - "finance automation"
+  - "accounts payable"
+  - "accounts receivable"
+  - "FP&A"
+  - "AI regulation"
+  - "AI policy"
+  - "autonomous workflows"
+  - "procurement automation"
+  - "NetSuite"
+
+low_priority_keywords:
+  - "gaming"
+  - "smartphone review"
+  - "celebrity"
+  - "consumer gadget"
+  - "Apple Watch"
+  - "headphones"

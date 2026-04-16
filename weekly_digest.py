@@ -2,9 +2,10 @@
 """
 FeedlyVP — Weekly "Week in Review" Digest
 Reads this week's daily digest_log.json entries, has Claude curate
-the top 3 stories per day, then emails a Week in Review via SendGrid.
+the top 3 stories per day, then delivers via Telegram.
 """
 
+import asyncio
 import json
 import os
 import re
@@ -13,8 +14,8 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import anthropic
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail
+from telegram import Bot
+from telegram.constants import ParseMode
 
 # ---------------------------------------------------------------------------
 # Paths & constants
@@ -23,8 +24,8 @@ BASE_DIR = Path(__file__).parent
 DIGEST_LOG_FILE = BASE_DIR / "digest_log.json"
 
 MODEL = "claude-sonnet-4-20250514"
-DAYS_BACK = 7          # how many days of daily logs to include
-TOP_PER_DAY = 3        # Claude picks this many per day
+DAYS_BACK = 7       # how many days of daily logs to include
+TOP_PER_DAY = 3     # Claude picks this many per day
 
 
 # ---------------------------------------------------------------------------
@@ -129,18 +130,31 @@ def get_weekly_big_picture(client: anthropic.Anthropic, all_picks: list[dict]) -
 
 
 # ---------------------------------------------------------------------------
-# HTML builder
+# Telegram delivery
 # ---------------------------------------------------------------------------
 
-def _score_color(score: int) -> str:
-    if score >= 9:
-        return "#10b981"
-    if score >= 7:
-        return "#f59e0b"
-    return "#ef4444"
+def _score_emoji(score: int) -> str:
+    if score == 10: return "🔥"
+    if score == 9:  return "⭐"
+    if score == 8:  return "🔵"
+    return "🟢"
 
 
-def _day_label(date_str: str) -> str:
+def _tg_escape(text: str) -> str:
+    """Escape a string for Telegram MarkdownV2."""
+    text = text.replace("\\", "\\\\")
+    for ch in ("_", "*", "[", "]", "(", ")", "~", "`", ">",
+               "#", "+", "-", "=", "|", "{", "}", ".", "!"):
+        text = text.replace(ch, f"\\{ch}")
+    return text
+
+
+def _tg_escape_url(url: str) -> str:
+    """Escape a URL for use inside a MarkdownV2 inline link [text](url)."""
+    return url.replace("\\", "\\\\").replace(")", "\\)")
+
+
+def _tg_day_label(date_str: str) -> str:
     """Convert '2026-04-14' → 'Tuesday, April 14'."""
     try:
         dt = datetime.strptime(date_str, "%Y-%m-%d")
@@ -149,117 +163,77 @@ def _day_label(date_str: str) -> str:
         return date_str
 
 
-def build_weekly_html(
-    day_sections: list[dict],   # [{"date": "2026-04-14", "articles": [...]}]
+async def _send_weekly_telegram(
+    bot_token: str,
+    chat_id: str,
+    day_sections: list[dict],
     big_picture: str,
     week_label: str,
-) -> str:
-    sections_html = ""
-    total_articles = 0
+    all_picks: list[dict],
+) -> int:
+    """Send weekly digest to Telegram. Returns total messages sent."""
+    delay = 1  # seconds between messages
+    sent = 0
 
-    for section in day_sections:
-        label = _day_label(section["date"])
-        cards = ""
-        for a in section["articles"]:
-            color = _score_color(a["score"])
-            cards += f"""
-        <div style="background:#ffffff;border-radius:10px;padding:18px 20px;
-                    margin-bottom:12px;border-left:4px solid {color};
-                    box-shadow:0 1px 4px rgba(0,0,0,0.07);">
-          <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:7px;">
-            <tr>
-              <td style="font-size:11px;color:#888;text-transform:uppercase;
-                         letter-spacing:0.6px;">{a['source']}</td>
-              <td align="right">
-                <span style="background:{color};color:#fff;border-radius:12px;
-                             padding:2px 9px;font-size:11px;font-weight:700;
-                             white-space:nowrap;">{a['score']}/10</span>
-              </td>
-            </tr>
-          </table>
-          <h3 style="margin:0 0 7px;font-size:15px;line-height:1.4;color:#111;">
-            <a href="{a['url']}" style="color:#111;text-decoration:none;">
-              {a['title']}
-            </a>
-          </h3>
-          <p style="margin:0;color:#444;font-size:13px;line-height:1.65;">
-            {a['summary']}
-          </p>
-        </div>"""
-            total_articles += 1
+    async with Bot(token=bot_token) as bot:
+        # ── 1. Hero message ─────────────────────────────────────────────
+        hero = (
+            f"📅 *FeedlyVP — Week in Review*\n"
+            f"{_tg_escape(week_label)}\n\n"
+            f"{_tg_escape(big_picture)}\n\n"
+            f"📊 {len(all_picks)} top stories across {len(day_sections)} days"
+        )
+        await bot.send_message(chat_id=chat_id, text=hero, parse_mode=ParseMode.MARKDOWN_V2)
+        sent += 1
+        await asyncio.sleep(delay)
 
-        sections_html += f"""
-    <div style="margin-bottom:24px;">
-      <p style="margin:0 0 10px;font-size:12px;color:#6b7280;text-transform:uppercase;
-                letter-spacing:0.8px;font-weight:600;border-bottom:1px solid #e5e7eb;
-                padding-bottom:6px;">{label}</p>
-      {cards}
-    </div>"""
+        # ── 2. One message per day ───────────────────────────────────────
+        for section in day_sections:
+            label = _tg_day_label(section["date"])
+            articles_text = ""
+            for a in section["articles"]:
+                emoji = _score_emoji(a["score"])
+                articles_text += (
+                    f"\n{emoji} *{_tg_escape(a['title'])}*\n"
+                    f"🗂 {_tg_escape(a.get('category', ''))} · "
+                    f"📰 {_tg_escape(a.get('source', ''))}\n"
+                    f"{_tg_escape(a.get('summary', ''))}\n"
+                    f"🔗 [Read]({_tg_escape_url(a['url'])})\n"
+                )
 
-    return f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>FeedlyVP Week in Review &mdash; {week_label}</title>
-</head>
-<body style="margin:0;padding:0;background:#f0f2f5;
-             font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,
-             'Helvetica Neue',Arial,sans-serif;">
-  <div style="max-width:620px;margin:0 auto;padding:20px 12px;">
+            day_msg = f"📆 *{_tg_escape(label)}*\n{articles_text}"
+            await bot.send_message(
+                chat_id=chat_id, text=day_msg, parse_mode=ParseMode.MARKDOWN_V2
+            )
+            sent += 1
+            await asyncio.sleep(delay)
 
-    <!-- Header -->
-    <div style="background:linear-gradient(135deg,#064e3b 0%,#065f46 55%,#047857 100%);
-                border-radius:12px;padding:30px 24px;margin-bottom:20px;text-align:center;">
-      <h1 style="margin:0 0 4px;color:#fff;font-size:26px;font-weight:800;
-                 letter-spacing:-0.5px;">FeedlyVP</h1>
-      <p style="margin:0 0 2px;color:#6ee7b7;font-size:13px;font-weight:600;
-                text-transform:uppercase;letter-spacing:1px;">Week in Review</p>
-      <p style="margin:0;color:#a7f3d0;font-size:12px;">{week_label}</p>
-    </div>
+        # ── 3. Closing message ───────────────────────────────────────────
+        closing = (
+            f"✅ Week in Review complete — "
+            f"{len(all_picks)} articles from {len(day_sections)} days\n"
+            "See you next Sunday."
+        )
+        await bot.send_message(chat_id=chat_id, text=closing)
+        sent += 1
 
-    <!-- Weekly Big Picture -->
-    <div style="background:linear-gradient(135deg,#065f46 0%,#0d9488 100%);
-                border-radius:10px;padding:22px 24px;margin-bottom:22px;">
-      <p style="margin:0 0 10px;color:#99f6e4;font-size:11px;text-transform:uppercase;
-                letter-spacing:1.2px;font-weight:700;">Week in Review</p>
-      <p style="margin:0;color:#f0fdf9;font-size:15px;line-height:1.75;">
-        {big_picture}
-      </p>
-    </div>
-
-    <!-- Article count label -->
-    <p style="margin:0 0 16px;font-size:12px;color:#6b7280;text-transform:uppercase;
-              letter-spacing:0.8px;font-weight:600;">
-      Top {total_articles} Stories This Week
-    </p>
-
-    <!-- Day sections -->
-    {sections_html}
-
-    <!-- Footer -->
-    <div style="text-align:center;padding:22px 0 10px;color:#9ca3af;font-size:11px;">
-      <p style="margin:0;">Generated by FeedlyVP &nbsp;&middot;&nbsp; Powered by Claude</p>
-    </div>
-  </div>
-</body>
-</html>"""
+    return sent
 
 
-# ---------------------------------------------------------------------------
-# SendGrid
-# ---------------------------------------------------------------------------
-
-def send_email(html: str, subject: str, to_email: str, from_email: str) -> int:
-    sg = SendGridAPIClient(os.environ["SENDGRID_API_KEY"])
-    message = Mail(
-        from_email=from_email,
-        to_emails=to_email,
-        subject=subject,
-        html_content=html,
+def deliver_weekly_telegram(
+    bot_token: str,
+    chat_id: str,
+    day_sections: list[dict],
+    big_picture: str,
+    week_label: str,
+    all_picks: list[dict],
+) -> int:
+    """Synchronous entry point for weekly Telegram delivery."""
+    return asyncio.run(
+        _send_weekly_telegram(
+            bot_token, chat_id, day_sections, big_picture, week_label, all_picks
+        )
     )
-    response = sg.send(message)
-    return response.status_code
 
 
 # ---------------------------------------------------------------------------
@@ -271,11 +245,10 @@ def main() -> None:
 
     required_env = {
         "ANTHROPIC_API_KEY": "Anthropic API key",
-        "SENDGRID_API_KEY": "SendGrid API key",
-        "FEEDLYVP_TO_EMAIL": "recipient email address",
-        "FEEDLYVP_FROM_EMAIL": "sender email address",
+        "TELEGRAM_BOT_TOKEN": "Telegram bot token",
+        "TELEGRAM_CHAT_ID": "Telegram chat ID",
     }
-    missing = [k for k in required_env if not os.environ.get(k)]
+    missing = [k for k in required_env if not os.environ.get(k, "").strip()]
     if missing:
         for k in missing:
             print(f"ERROR: {k} ({required_env[k]}) is not set", file=sys.stderr)
@@ -317,9 +290,9 @@ def main() -> None:
     big_picture = get_weekly_big_picture(client, all_picks)
 
     # ------------------------------------------------------------------
-    # 4. Build & send email
+    # 4. Deliver to Telegram
     # ------------------------------------------------------------------
-    print("\n[4/4] Building HTML and sending email …")
+    print("\n[4/4] Delivering to Telegram …")
     start_date = week_entries[0]["date"]
     end_date = week_entries[-1]["date"]
     try:
@@ -332,16 +305,15 @@ def main() -> None:
     except ValueError:
         week_label = f"{start_date} – {end_date}"
 
-    html = build_weekly_html(day_sections, big_picture, week_label)
-    subject = f"FeedlyVP Week in Review — {week_label}"
-
-    status = send_email(
-        html,
-        subject,
-        os.environ["FEEDLYVP_TO_EMAIL"],
-        os.environ["FEEDLYVP_FROM_EMAIL"],
+    messages_sent = deliver_weekly_telegram(
+        os.environ["TELEGRAM_BOT_TOKEN"],
+        os.environ["TELEGRAM_CHAT_ID"],
+        day_sections,
+        big_picture,
+        week_label,
+        all_picks,
     )
-    print(f"  SendGrid response: HTTP {status}")
+    print(f"  Sent {messages_sent} Telegram messages")
 
     # ------------------------------------------------------------------
     # Append weekly summary entry to digest_log.json
@@ -353,7 +325,7 @@ def main() -> None:
             "run_at": now.isoformat(),
             "days_covered": len(week_entries),
             "articles_featured": len(all_picks),
-            "sendgrid_status": status,
+            "telegram_messages_sent": messages_sent,
             "big_picture": big_picture,
         }
     )
@@ -365,8 +337,7 @@ def main() -> None:
     print(f"\n{'='*36}")
     print(f"  Days with articles: {len(week_entries)}")
     print(f"  Articles featured:  {len(all_picks)}")
-    print(f"  Sent to:            {os.environ['FEEDLYVP_TO_EMAIL']}")
-    print(f"  SendGrid status:    {status}")
+    print(f"  Telegram messages:  {messages_sent}")
     print(f"{'='*36}")
 
 

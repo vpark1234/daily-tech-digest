@@ -208,5 +208,50 @@
         "category": "Community & Practitioner"
       }
     ]
+  },
+  {
+    "type": "daily",
+    "date": "2026-04-17",
+    "run_at": "2026-04-17T16:29:28.001074+00:00",
+    "feeds_fetched": 15,
+    "feeds_failed": 0,
+    "articles_scored": 49,
+    "articles_sent": 4,
+    "telegram_messages_sent": 6,
+    "big_picture": "**Today's Big Picture**\n\nEnterprise software is shifting from traditional purchase-and-deploy models toward embedded AI agents that integrate directly into business workflows, fundamentally changing how companies will buy and interact with software solutions. While AI capabilities like vector search are rapidly commoditizing, the real competitive advantage lies in data sovereignty, enterprise trust, and long-term support\u2014factors that should guide procurement decisions over flashy performance benchmarks. As AI hype reaches speculative peaks reminiscent of dot-com era excess, enterprise buyers and ERP consultants must distinguish between genuine workflow transformation opportunities and companies simply rebranding existing solutions with AI labels to capture market attention.",
+    "articles": [
+      {
+        "title": "Salesforce TDX 2026 \u2013 how AgentExchange moves the point of purchase closer to actual work",
+        "url": "https://diginomica.com/salesforce-tdx-2026-how-agentexchange-moves-point-purchase-closer-actual-work",
+        "source": "Diginomica",
+        "score": 9,
+        "summary": "Salesforce's AgentExchange represents a significant shift in enterprise software by embedding AI agents directly into business workflows, potentially disrupting traditional software purchasing and deployment models. This move toward agentic AI in core business processes like procurement and finance could reshape how enterprises interact with and buy enterprise software.",
+        "category": "Enterprise & ERP"
+      },
+      {
+        "title": "Vector search is table stakes - OpenSearch Foundation bets on data sovereignty and enterprise trust instead",
+        "url": "https://diginomica.com/vector-search-table-stakes-opensearch-foundation-data-sovereignty-enterprise-trust",
+        "source": "Diginomica",
+        "score": 7,
+        "summary": "OpenSearch Foundation leaders argue that vector search capabilities are commoditized and enterprises should focus on data sovereignty and long-term support rather than benchmark performance. The discussion addresses enterprise AI infrastructure strategy and trust considerations for production deployments.",
+        "category": "Enterprise & ERP"
+      },
+      {
+        "title": "How robots learn: A brief, contemporary history",
+        "url": "https://www.technologyreview.com/2026/04/17/1135416/how-robots-learn-brief-contemporary-history/",
+        "source": "MIT Technology Review",
+        "score": 7,
+        "summary": "MIT Technology Review explores the evolution of robotics research from ambitious sci-fi goals to practical industrial applications. The article traces how the field has shifted toward more achievable but still significant automation capabilities.",
+        "category": "Tech Strategy & Analysis"
+      },
+      {
+        "title": "The \u2018AI is inevitable\u2019 trap",
+        "url": "https://www.theverge.com/podcast/913792/ai-divide-sam-altman-vergecast",
+        "source": "The Verge",
+        "score": 7,
+        "summary": "Article examines the market dynamics around AI hype, using Allbirds' rebranding as 'Newbird AI' and subsequent stock surge as a case study. Explores whether we've reached peak AI speculation and the broader implications for how companies position themselves around AI narratives.",
+        "category": "Broad Tech News"
+      }
+    ]
   }
 ]

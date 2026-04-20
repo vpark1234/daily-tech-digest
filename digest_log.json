@@ -421,5 +421,98 @@
         "category": "AI & Research"
       }
     ]
+  },
+  {
+    "type": "daily",
+    "date": "2026-04-20",
+    "run_at": "2026-04-20T16:38:57.385994+00:00",
+    "feeds_fetched": 15,
+    "feeds_failed": 0,
+    "articles_scored": 42,
+    "articles_sent": 10,
+    "telegram_messages_sent": 12,
+    "big_picture": "**Today's Big Picture**\n\nEnterprise software is rapidly shifting from traditional automation to agentic AI systems that operate autonomously, as evidenced by Adobe's CX Enterprise launch and Publicis's \"transformation complete\" positioning, signaling that the next competitive battleground will be who can deploy self-managing AI workflows most effectively. The infrastructure reality check is hitting hard\u2014from OpenAI halting UK data centers due to energy costs to the broader question of who pays for AI's massive electricity demands\u2014forcing enterprises to factor infrastructure economics into their AI strategies rather than just focusing on software capabilities. For ERP consultants and enterprise buyers, this means the window for traditional system implementations is closing fast, and the focus must shift to AI-native platforms that can handle autonomous operations while planning for the substantial infrastructure investments required to support these next-generation systems.",
+    "articles": [
+      {
+        "title": "Adobe Summit 2026 - Adobe gives CX an agentic makeover with the launch of CX Enterprise",
+        "url": "https://diginomica.com/adobe-summit-2026-adobe-gives-cx-agentic-makeover-launch-cx-enterprise",
+        "source": "Diginomica",
+        "score": 8,
+        "summary": "Adobe launches CX Enterprise with agentic AI automations and multi-purpose co-worker agents, representing a significant enterprise software strategy shift. This signals Adobe's move into autonomous workflow territory, competing with major enterprise platforms.",
+        "category": "Enterprise & ERP"
+      },
+      {
+        "title": "AI infrastructure - OpenAI slamming the brakes on UK data center plans sparks electrifying debate around the AI energy bill",
+        "url": "https://diginomica.com/openai-slamming-brakes-uk-data-center-plans-sparks-electrifying-debate-around-ai-energy-bill",
+        "source": "Diginomica",
+        "score": 8,
+        "summary": "OpenAI's decision to halt UK data center plans highlights the critical infrastructure and energy challenges facing AI deployment at scale. This sparks broader strategic questions about who bears the massive electricity costs of AI infrastructure and how this impacts competitive positioning.",
+        "category": "Enterprise & ERP"
+      },
+      {
+        "title": "Import AI 454: Automating alignment research; safety study of a Chinese model; HiFloat4",
+        "url": "https://jack-clark.net/2026/04/20/import-ai-454-automating-alignment-research-safety-study-of-a-chinese-model-hifloat4/",
+        "source": "Import AI",
+        "score": 8,
+        "summary": "Import AI newsletter covers AI research developments including Huawei's HiFloat4 training format outperforming Western alternatives, alignment research automation, and safety studies of Chinese AI models. The article touches on export controls driving Chinese AI innovation and includes substantive technical analysis of AI systems.",
+        "category": "AI & Research"
+      },
+      {
+        "title": "Transformation heavy lifting over, time to move on with agentic AI - Publicis pitches a 'head start' vision for a disrupted business sector",
+        "url": "https://diginomica.com/transformation-heavy-lifting-over-time-move-agentic-ai-publicis-pitches-head-start-vision-disrupted",
+        "source": "Diginomica",
+        "score": 7,
+        "summary": "Publicis CEO claims the company has gained competitive advantage through early AI adoption and is positioning for agentic AI deployment. The article discusses how transformation work is complete and the focus is shifting to autonomous AI workflows in business operations.",
+        "category": "Enterprise & ERP"
+      },
+      {
+        "title": "Canva\u2019s CEO on its big pivot to AI enterprise software",
+        "url": "https://www.theverge.com/podcast/913793/melanie-perkins-canva-ai-adobe-affinity-design",
+        "source": "The Verge",
+        "score": 8,
+        "summary": "Canva's CEO discusses the company's strategic pivot from consumer design tool to AI-powered enterprise software, representing a significant business model transformation. This shift illustrates how AI is enabling companies to expand into new markets and redefine their competitive positioning.",
+        "category": "Broad Tech News"
+      },
+      {
+        "title": "Tech CEOs Think AI Will Let Them Be Everywhere at Once",
+        "url": "https://www.wired.com/story/tech-ceos-using-ai-to-be-everywhere-at-once/",
+        "source": "Wired",
+        "score": 7,
+        "summary": "Article explores how tech leaders like Zuckerberg and Dorsey envision using AI for management and organizational control. Focuses on the strategic implications of AI-enabled leadership and corporate governance rather than technical implementation.",
+        "category": "Broad Tech News"
+      },
+      {
+        "title": "Qwen3.6-Max-Preview: Smarter, Sharper, Still Evolving",
+        "url": "https://qwen.ai/blog?id=qwen3.6-max-preview",
+        "source": "Hacker News",
+        "score": 7,
+        "summary": "Qwen3.6-Max-Preview appears to be a new AI model release from Alibaba's Qwen series, representing continued competition in the foundation model space. The model likely offers improvements in reasoning and performance, contributing to the ongoing race between major AI providers.",
+        "category": "Community & Practitioner"
+      },
+      {
+        "title": "Atlassian Enables Default Data Collection to Train AI",
+        "url": "https://letsdatascience.com/news/atlassian-enables-default-data-collection-to-train-ai-f71343d8",
+        "source": "Hacker News",
+        "score": 7,
+        "summary": "Atlassian is changing its default settings to collect user data for AI training purposes, which represents a significant shift in enterprise software data practices. This move by a major enterprise platform provider could signal broader industry trends around AI training data collection and enterprise privacy policies.",
+        "category": "Community & Practitioner"
+      },
+      {
+        "title": "Deezer says 44% of songs uploaded to its platform daily are AI-generated",
+        "url": "https://techcrunch.com/2026/04/20/deezer-says-44-of-songs-uploaded-to-its-platform-daily-are-ai-generated/",
+        "source": "Hacker News",
+        "score": 7,
+        "summary": "Deezer reports that 44% of daily song uploads to its platform are AI-generated, highlighting the rapid proliferation of AI content creation tools. This signals a significant shift in creative industries and raises questions about content authenticity, platform curation, and the economics of digital media platforms.",
+        "category": "Community & Practitioner"
+      },
+      {
+        "title": "Tesla launches robotaxis in Dallas and Houston, and oops, it\u2019s already unavailable",
+        "url": "https://www.theverge.com/transportation/914823/tesla-robotaxi-houston-dallas-unavailable",
+        "source": "The Verge",
+        "score": 7,
+        "summary": "Tesla has launched robotaxi service in Dallas and Houston but with very limited vehicle availability, representing a significant step in autonomous vehicle deployment. This marks Tesla's entry into commercial autonomous transportation services, though early execution appears constrained.",
+        "category": "Broad Tech News"
+      }
+    ]
   }
 ]

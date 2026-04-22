@@ -623,5 +623,138 @@
         "category": "AI & Research"
       }
     ]
+  },
+  {
+    "type": "daily",
+    "date": "2026-04-22",
+    "run_at": "2026-04-22T16:36:42.091281+00:00",
+    "feeds_fetched": 15,
+    "feeds_failed": 0,
+    "articles_scored": 74,
+    "articles_sent": 15,
+    "telegram_messages_sent": 17,
+    "big_picture": "**Today's Big Picture:** Enterprise technology is rapidly shifting from traditional AI tools to autonomous agent systems that require fundamentally different management approaches, infrastructure investments, and operational frameworks\u2014as evidenced by Google's $32B cybersecurity bet, Adobe's campaign-generating agents, and specialized TPU chips for agentic workloads. European enterprises are simultaneously driving a sovereignty movement away from US hyperscaler dependence, creating new market opportunities for alternative providers like SUSE while demanding greater control over their technology stack amid geopolitical tensions. For ERP consultants and enterprise buyers, this means preparing for a dual transformation: integrating agentic AI capabilities that can autonomously handle complex business processes while also evaluating supply chain resilience and vendor diversification strategies to reduce strategic dependencies.",
+    "articles": [
+      {
+        "title": "Managing agents isn't the same as managing either people or traditional IT -  digging into Workday's Agent System of Record",
+        "url": "https://diginomica.com/managing-agents-isnt-same-people-or-it-workday-agent-system",
+        "source": "Diginomica",
+        "score": 9,
+        "summary": "This article explores Workday's Agent System of Record, diving into the unique challenges of managing AI agents in enterprise environments compared to traditional IT or human management. It addresses a critical gap in understanding how to operationalize agentic AI systems in business contexts.",
+        "category": "Enterprise & ERP"
+      },
+      {
+        "title": "Adobe Summit 2026 - NBCUniversal outlines its approach to rollout of AI agents and assistants as Adobe rolls out new tools",
+        "url": "https://diginomica.com/adobe-summit-2026-nbcuniversal-outlines-its-approach-rollout-ai-agents-and-assistants-adobe-rolls",
+        "source": "Diginomica",
+        "score": 8,
+        "summary": "Adobe is rolling out new AI agent tools that can create marketing campaigns in minutes and convert 2D images to 3D, with NBCUniversal as a major enterprise case study for deployment. This represents a significant advancement in agentic AI systems for enterprise marketing workflows.",
+        "category": "Enterprise & ERP"
+      },
+      {
+        "title": "Industrial disruption and the new energy reality - where AI makes a difference",
+        "url": "https://diginomica.com/industrial-disruption-energy-reality-ai-difference",
+        "source": "Diginomica",
+        "score": 8,
+        "summary": "Article explores how agentic AI systems can enhance industrial resilience amid geopolitical tensions, energy volatility, and supply chain disruptions. Features insights from IFS executive on AI's strategic role in enterprise operations during uncertain times.",
+        "category": "Enterprise & ERP"
+      },
+      {
+        "title": "Google bets $32B on AI agent cyber force as security arms race escalates",
+        "url": "https://www.zdnet.com/article/google-deploys-ai-agent-cyber-force-as-security-arms-race-escalates/",
+        "source": "ZDNet Enterprise",
+        "score": 9,
+        "summary": "Google is investing $32B in AI agent-powered cybersecurity through its Wiz acquisition and AI agent development, positioning for automated cyber warfare at machine speed. This represents a major strategic shift toward autonomous security systems that could fundamentally change enterprise defense capabilities.",
+        "category": "Enterprise & ERP"
+      },
+      {
+        "title": "How Google just revamped Gemini Enterprise for the agentic era - here's what's new",
+        "url": "https://www.zdnet.com/article/google-cloud-next-enterprise-agent-platform-ai/",
+        "source": "ZDNet Enterprise",
+        "score": 9,
+        "summary": "Google launches Gemini Enterprise Agent Platform, a developer tool for managing fleets of AI agents at enterprise scale. This represents a major strategic move into agentic AI for business automation, directly competing with enterprise software giants.",
+        "category": "Enterprise & ERP"
+      },
+      {
+        "title": "AI scientists produce results without reasoning scientifically",
+        "url": "https://arxiv.org/abs/2604.18805",
+        "source": "arXiv - AI",
+        "score": 9,
+        "summary": "Research evaluates whether LLM-based scientific agents follow proper scientific reasoning across 25,000+ experiments, finding gaps between performance and epistemic rigor. This addresses a critical question about AI agents' reliability in autonomous research workflows.",
+        "category": "AI & Research"
+      },
+      {
+        "title": "SUSECON 26 \u2013 Beware of Gremlins as Europe\u2019s open source agitator turns its attention to agentic AI",
+        "url": "https://diginomica.com/susecon-26-beware-gremlins-europes-open-source-agitator-turns-its-attention-agentic-ai",
+        "source": "Diginomica",
+        "score": 7,
+        "summary": "SUSE is positioning itself in the agentic AI market with focus on management and observability capabilities. The article discusses enterprise implications of AI agents transitioning from tools to autonomous partners.",
+        "category": "Enterprise & ERP"
+      },
+      {
+        "title": "SUSECON 26 \u2013 choice equals resilience, says SUSE CEO, as customers want out from US dominance",
+        "url": "https://diginomica.com/susecon-26-choice-equals-resilience-says-suse-ceo-customers-want-out-us-dominance",
+        "source": "Diginomica",
+        "score": 7,
+        "summary": "SUSE CEO addresses customer concerns about reducing dependence on US technology dominance, connecting geopolitical tensions to enterprise software choice and resilience strategies. The discussion highlights how political and regulatory forces are driving technology procurement decisions beyond traditional technical and cost considerations.",
+        "category": "Enterprise & ERP"
+      },
+      {
+        "title": "SUSECON 26 \u2013 it\u2019s Prague Spring v2 as European enterprises demand sovereignty and freedom from hyperscalers",
+        "url": "https://diginomica.com/susecon-26-its-prague-spring-v2-european-enterprises-demand-sovereignty-and-freedom-hyperscalers",
+        "source": "Diginomica",
+        "score": 7,
+        "summary": "European enterprises are demanding technological sovereignty and independence from major cloud providers, with SUSE positioning itself as an alternative to hyperscaler dominance. The article discusses how enterprise customers are driving demand for change away from big tech dependencies.",
+        "category": "Enterprise & ERP"
+      },
+      {
+        "title": "The Download: introducing the 10 Things That Matter in AI Right Now",
+        "url": "https://www.technologyreview.com/2026/04/22/1136310/the-download-10-things-that-matter-in-ai-right-now/",
+        "source": "MIT Technology Review",
+        "score": 8,
+        "summary": "MIT Technology Review is launching a curated list of '10 Things That Matter in AI Right Now' to cut through AI hype and focus on what's actually important. This appears to be a strategic effort to provide substantive analysis amid the overwhelming volume of AI announcements and developments.",
+        "category": "Tech Strategy & Analysis"
+      },
+      {
+        "title": "AI needs a strong data fabric to deliver business value",
+        "url": "https://www.technologyreview.com/2026/04/22/1135295/ai-needs-a-strong-data-fabric-to-deliver-business-value/",
+        "source": "MIT Technology Review",
+        "score": 8,
+        "summary": "Article discusses the critical infrastructure requirements for enterprise AI deployment, focusing on data fabric needs as AI moves from experimentation to production across business functions. Addresses the practical challenges organizations face when scaling AI systems in finance, supply chain, and operations.",
+        "category": "Tech Strategy & Analysis"
+      },
+      {
+        "title": "Roundtables: Unveiling The 10 Things That Matter in AI Right Now",
+        "url": "https://www.technologyreview.com/2026/04/21/1135486/roundtables-unveiling-the-10-things-that-matter-in-ai-right-now/",
+        "source": "MIT Technology Review",
+        "score": 8,
+        "summary": "MIT Technology Review's signature AI conference presents a curated list of 10 critical AI technologies, trends, and movements that industry leaders need to understand. This appears to be strategic intelligence from a premium tech publication's flagship AI event, likely covering enterprise applications and regulatory developments.",
+        "category": "Tech Strategy & Analysis"
+      },
+      {
+        "title": "Our eighth generation TPUs: two chips for the agentic era",
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/eighth-generation-tpu-agentic-era/",
+        "source": "Hacker News",
+        "score": 9,
+        "summary": "Google announces eighth-generation TPUs specifically designed for the agentic AI era, representing a major infrastructure advancement for AI agent deployment. This hardware development directly enables the autonomous workflows and enterprise AI applications that are reshaping business operations.",
+        "category": "Community & Practitioner"
+      },
+      {
+        "title": "ARES: Adaptive Red-Teaming and End-to-End Repair of Policy-Reward System",
+        "url": "https://arxiv.org/abs/2604.18789",
+        "source": "arXiv - AI",
+        "score": 8,
+        "summary": "ARES is a new framework for discovering and fixing vulnerabilities in AI safety systems where both the language model and its reward model fail simultaneously. This addresses a critical weakness in current AI alignment approaches that could impact enterprise AI deployment safety.",
+        "category": "AI & Research"
+      },
+      {
+        "title": "Generative AI at Work: From Exposure to Adoption across 35 European Countries",
+        "url": "https://arxiv.org/abs/2604.18849",
+        "source": "arXiv - Economics & Tech Policy",
+        "score": 8,
+        "summary": "Large-scale empirical study of generative AI adoption across 35 European countries shows 12% average workplace adoption with significant variation, revealing that adoption doesn't simply follow exposure patterns but depends on worker skills and job content. This provides concrete data on how AI is actually diffusing through the European workforce and reshaping work tasks.",
+        "category": "AI & Research"
+      }
+    ]
   }
 ]

@@ -1181,5 +1181,14 @@
         "category": "Broad Tech News"
       }
     ]
+  },
+  {
+    "type": "weekly",
+    "date": "2026-04-26",
+    "run_at": "2026-04-26T16:07:37.084163+00:00",
+    "days_covered": 10,
+    "articles_featured": 27,
+    "telegram_messages_sent": 12,
+    "big_picture": "Enterprise AI has decisively shifted from experimentation to operational deployment, with major vendors like Adobe, Google, ServiceNow, and SAP launching agentic AI platforms that promise autonomous workflow execution\u2014but early adopters are already encountering familiar challenges including vendor lock-in, integration complexity, and the gap between AI capabilities and business control requirements. The underlying infrastructure crisis is intensifying, as RAM shortages expected through 2030 and mounting AI operational costs will force enterprises to make strategic technology stack decisions now that will determine their competitive positioning for years. For ERP consultants and enterprise software buyers, this represents a critical inflection point: organizations must immediately begin evaluating agentic AI platforms and data architecture foundations while preparing for a constrained hardware environment that will reward early, thoughtful AI infrastructure investments over rushed implementations."
   }
 ]

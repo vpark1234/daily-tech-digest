@@ -1190,5 +1190,138 @@
     "articles_featured": 27,
     "telegram_messages_sent": 12,
     "big_picture": "Enterprise AI has decisively shifted from experimentation to operational deployment, with major vendors like Adobe, Google, ServiceNow, and SAP launching agentic AI platforms that promise autonomous workflow execution\u2014but early adopters are already encountering familiar challenges including vendor lock-in, integration complexity, and the gap between AI capabilities and business control requirements. The underlying infrastructure crisis is intensifying, as RAM shortages expected through 2030 and mounting AI operational costs will force enterprises to make strategic technology stack decisions now that will determine their competitive positioning for years. For ERP consultants and enterprise software buyers, this represents a critical inflection point: organizations must immediately begin evaluating agentic AI platforms and data architecture foundations while preparing for a constrained hardware environment that will reward early, thoughtful AI infrastructure investments over rushed implementations."
+  },
+  {
+    "type": "daily",
+    "date": "2026-04-27",
+    "run_at": "2026-04-27T21:38:02.679887+00:00",
+    "feeds_fetched": 15,
+    "feeds_failed": 0,
+    "articles_scored": 67,
+    "articles_sent": 15,
+    "telegram_messages_sent": 17,
+    "big_picture": "**Today's Big Picture:**\n\nEnterprise AI adoption is hitting reality as organizations discover that data infrastructure rebuilds and workforce transformation are the primary challenges, not the AI models themselves\u2014as evidenced by IBM positioning itself as \"AI Switzerland\" and Merck's billion-dollar focus on foundational data work over flashy tools. The market is simultaneously maturing with GitHub's shift to usage-based pricing and major partnerships like Microsoft-OpenAI potentially restructuring, while breakthrough agentic AI systems for drug discovery and scientific research demonstrate that truly autonomous enterprise workflows are becoming feasible. For enterprise software buyers and ERP consultants, this means prioritizing data stack modernization and change management over chasing the latest AI features, while preparing for a future where AI agents will handle complex multi-step processes that currently require significant human coordination.",
+    "articles": [
+      {
+        "title": "Not the first rodeo - IBM CEO Arvind Krishna on enterprise AI challenges, being a frontier model Switzerland, and introducing Bob!",
+        "url": "https://diginomica.com/not-first-rodeo-ibm-ceo-arvind-krishna-enterprise-ai-challenges-being-frontier-model-switzerland",
+        "source": "Diginomica",
+        "score": 8,
+        "summary": "IBM CEO discusses enterprise AI strategy, positioning IBM as a neutral platform provider across different AI models while addressing practical deployment challenges in business workflows. The interview covers IBM's approach to being 'AI Switzerland' and enterprise-specific AI implementation hurdles.",
+        "category": "Enterprise & ERP"
+      },
+      {
+        "title": "Salesforce TDX 2026 - what does it really mean to be a Trailblazer in an agentic future?",
+        "url": "https://diginomica.com/salesforce-tdx-2026-trailblazer-agentic-future",
+        "source": "Diginomica",
+        "score": 8,
+        "summary": "Salesforce's TDX conference revealed anxiety among its technical community about how agentic AI will transform their professional roles. The piece examines how enterprise AI adoption is creating workforce disruption even among highly skilled technology professionals.",
+        "category": "Enterprise & ERP"
+      },
+      {
+        "title": "Powering up! How a shared foundation model is improving electrical grid management",
+        "url": "https://diginomica.com/powering-how-shared-foundation-model-improving-electrical-grid-management",
+        "source": "Diginomica",
+        "score": 8,
+        "summary": "Keen AI is developing a foundation model specifically for electrical grid management, which could reduce operational costs and improve safety in critical infrastructure. This represents a practical application of AI to enterprise infrastructure with potential broader implications for other industrial sectors.",
+        "category": "Enterprise & ERP"
+      },
+      {
+        "title": "Rebuilding the data stack for AI",
+        "url": "https://www.technologyreview.com/2026/04/27/1136322/rebuilding-the-data-stack-for-ai/",
+        "source": "MIT Technology Review",
+        "score": 9,
+        "summary": "MIT Technology Review examines how enterprises are finding data infrastructure to be the primary bottleneck for AI deployment at scale. The piece addresses the fundamental strategic challenge of rebuilding enterprise data stacks to enable meaningful AI adoption beyond consumer-facing tools.",
+        "category": "Tech Strategy & Analysis"
+      },
+      {
+        "title": "MolClaw: An Autonomous Agent with Hierarchical Skills for Drug Molecule Evaluation, Screening, and Optimization",
+        "url": "https://arxiv.org/abs/2604.21937",
+        "source": "arXiv - AI",
+        "score": 9,
+        "summary": "MolClaw is an autonomous AI agent system that orchestrates 30+ specialized tools across 70 hierarchical skills for complex drug discovery workflows including molecule screening and optimization. This represents a significant advancement in agentic AI applied to high-complexity, multi-step scientific processes that traditionally require extensive human coordination.",
+        "category": "AI & Research"
+      },
+      {
+        "title": "Inside Merck's Google Cloud partnership - data, people, and not chasing shiny tools",
+        "url": "https://diginomica.com/inside-mercks-google-cloud-partnership-data-people-and-not-chasing-shiny-tools",
+        "source": "Diginomica",
+        "score": 7,
+        "summary": "Merck's $1 billion Google Cloud partnership focuses on data consolidation and change management rather than technology itself, offering insights into how large enterprises approach cloud transformation. The emphasis on foundational work over 'shiny tools' provides a strategic perspective on enterprise digital transformation.",
+        "category": "Enterprise & ERP"
+      },
+      {
+        "title": "AI and grocery - the UK's leading supermarkets put AI top of the shopping list. The CEOs of Sainsbury's and Tesco explain why",
+        "url": "https://diginomica.com/ai-and-grocery-uks-leading-supermarkets-put-ai-top-shopping-list-ceos-sainsburys-and-tesco-explain",
+        "source": "Diginomica",
+        "score": 7,
+        "summary": "UK supermarket CEOs from major retailers Sainsbury's and Tesco discuss their strategic AI implementations across operations. This represents enterprise AI adoption at scale in a traditional industry, showing how AI is reshaping retail business models and competitive dynamics.",
+        "category": "Enterprise & ERP"
+      },
+      {
+        "title": "The Download: DeepSeek\u2019s latest AI breakthrough, and the race to build world models",
+        "url": "https://www.technologyreview.com/2026/04/27/1136438/the-download-deepseek-v4-ai-world-models/",
+        "source": "MIT Technology Review",
+        "score": 8,
+        "summary": "MIT Technology Review covers DeepSeek's V4 model release, highlighting its ability to process longer prompts and its significance in the AI development landscape. The article also discusses the broader race among companies to build world models, representing a key strategic shift in AI capabilities.",
+        "category": "Tech Strategy & Analysis"
+      },
+      {
+        "title": "The Man Behind AlphaGo Thinks AI Is Taking the Wrong Path",
+        "url": "https://www.wired.com/story/david-silver-ai-ineffable-intelligence-reinforcement-learning/",
+        "source": "Wired",
+        "score": 9,
+        "summary": "David Silver, the DeepMind researcher behind AlphaGo, has launched a billion-dollar AI company focused on building 'superlearners' - likely advanced AI agents that can learn and adapt across domains. This represents a significant strategic shift from current AI approaches and could reshape how AI systems are developed and deployed.",
+        "category": "Broad Tech News"
+      },
+      {
+        "title": "Microsoft and OpenAI end their exclusive and revenue-sharing deal",
+        "url": "https://www.bloomberg.com/news/articles/2026-04-27/microsoft-to-stop-sharing-revenue-with-main-ai-partner-openai",
+        "source": "Hacker News",
+        "score": 9,
+        "summary": "Microsoft and OpenAI are reportedly ending their exclusive partnership and revenue-sharing arrangement, which could fundamentally reshape the AI landscape and competitive dynamics. This represents a major strategic shift that could affect enterprise AI deployment, platform strategies, and the balance of power among tech giants.",
+        "category": "Community & Practitioner"
+      },
+      {
+        "title": "Math Takes Two: A test for emergent mathematical reasoning in communication",
+        "url": "https://arxiv.org/abs/2604.21935",
+        "source": "arXiv - AI",
+        "score": 8,
+        "summary": "New arXiv paper introduces 'Math Takes Two' benchmark to test whether AI models truly reason mathematically or just pattern match, focusing on emergent reasoning through communication rather than memorized formal syntax. This addresses a fundamental question about AI capabilities that's crucial for understanding limits of current models in real-world applications.",
+        "category": "AI & Research"
+      },
+      {
+        "title": "Read the Paper, Write the Code: Agentic Reproduction of Social-Science Results",
+        "url": "https://arxiv.org/abs/2604.21965",
+        "source": "arXiv - AI",
+        "score": 8,
+        "summary": "Researchers developed an AI agent system that can reproduce social science research results using only paper descriptions and raw data, without access to original code or results. This demonstrates significant progress in autonomous AI systems capable of complex analytical workflows and scientific reasoning.",
+        "category": "AI & Research"
+      },
+      {
+        "title": "GitHub Copilot shifts to usage-based pricing June 1 - why that's no surprise",
+        "url": "https://www.zdnet.com/article/github-copilot-shifts-to-usage-based-pricing/",
+        "source": "ZDNet Enterprise",
+        "score": 7,
+        "summary": "GitHub is moving Copilot from subscription to usage-based pricing starting June 1, which reflects broader market trends in AI service monetization. This pricing shift indicates maturation of AI coding tools and could influence how other enterprise AI services structure their billing models.",
+        "category": "Enterprise & ERP"
+      },
+      {
+        "title": "The missing step between hype and profit",
+        "url": "https://www.technologyreview.com/2026/04/27/1136456/the-missing-step-between-hype-and-profit/",
+        "source": "MIT Technology Review",
+        "score": 7,
+        "summary": "MIT Technology Review piece examining the gap between AI hype and actual profit generation, likely exploring the challenges of translating AI capabilities into real business value. The article appears to take a critical look at the current state of AI commercialization and deployment.",
+        "category": "Tech Strategy & Analysis"
+      },
+      {
+        "title": "Focus Session: Hardware and Software Techniques for Accelerating Multimodal Foundation Models",
+        "url": "https://arxiv.org/abs/2604.21952",
+        "source": "arXiv - Machine Learning",
+        "score": 8,
+        "summary": "Academic research presents hardware-software co-design methodology for accelerating multimodal foundation models through compression, quantization, and optimization techniques. This addresses a critical bottleneck in deploying large multimodal AI systems at enterprise scale.",
+        "category": "AI & Research"
+      }
+    ]
   }
 ]

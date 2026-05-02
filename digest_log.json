@@ -1456,5 +1456,74 @@
         "category": "Broad Tech News"
       }
     ]
+  },
+  {
+    "type": "daily",
+    "date": "2026-05-02",
+    "run_at": "2026-05-02T16:07:15.401812+00:00",
+    "feeds_fetched": 15,
+    "feeds_failed": 0,
+    "articles_scored": 42,
+    "articles_sent": 7,
+    "telegram_messages_sent": 9,
+    "big_picture": "**Today's Big Picture:** Enterprise AI is hitting a critical inflection point where transparency and control are becoming competitive necessities rather than nice-to-haves, as evidenced by Sage's \"glass box\" AI strategy and research showing that AI systems can be precisely controlled through single directional vectors. The ongoing Musk-Altman legal battle and findings about LLM self-bias reveal deeper structural issues around AI governance, safety, and reliability that enterprise buyers can no longer ignore when evaluating AI-powered solutions. Meanwhile, geopolitical tensions are reshaping technology procurement with new hardware restrictions, signaling that enterprise software buyers and ERP consultants must now balance AI innovation with transparency, bias mitigation, and supply chain security as core evaluation criteria.",
+    "articles": [
+      {
+        "title": "Sage Future 2026 - no more AI black boxes! But are customers ready to trust AI in audited workflows?",
+        "url": "https://diginomica.com/sage-future-2026-no-more-ai-black-boxes-are-customers-ready-trust-ai-audited-workflows",
+        "source": "Diginomica",
+        "score": 8,
+        "summary": "Sage is positioning transparent AI ('glass boxes' not black boxes) for SMB financial workflows, addressing a critical trust and explainability challenge in enterprise AI adoption. This represents a strategic bet on AI transparency as a competitive differentiator in the ERP/finance automation space.",
+        "category": "Enterprise & ERP"
+      },
+      {
+        "title": "Musk v. Altman week 1: Elon Musk says he was duped, warns AI could kill us all, and admits that xAI distills OpenAI\u2019s models",
+        "url": "https://www.technologyreview.com/2026/05/01/1136800/musk-v-altman-week-1-musk-says-he-was-duped-warns-ai-could-kill-us-all-and-admits-that-xai-distills-openais-models/",
+        "source": "MIT Technology Review",
+        "score": 8,
+        "summary": "Elon Musk's trial testimony against OpenAI reveals strategic tensions over AI development control and safety concerns. His admission that xAI distills OpenAI's models highlights competitive dynamics in the foundation model space.",
+        "category": "Tech Strategy & Analysis"
+      },
+      {
+        "title": "Refusal in Language Models Is Mediated by a Single Direction",
+        "url": "https://arxiv.org/abs/2406.11717",
+        "source": "Hacker News",
+        "score": 8,
+        "summary": "Research finding that refusal behavior in language models is controlled by a single direction in the model's representation space, potentially allowing for precise control over AI safety mechanisms. This has significant implications for AI alignment and the development of more controllable enterprise AI systems.",
+        "category": "Community & Practitioner"
+      },
+      {
+        "title": "What You Need to Know About the Foreign-Made Router Ban in the US",
+        "url": "https://www.wired.com/story/us-government-foreign-made-router-ban-explained/",
+        "source": "Wired",
+        "score": 7,
+        "summary": "The FCC has banned sales of new consumer Wi-Fi routers and mobile hotspots manufactured outside the US, representing a significant policy shift affecting the networking hardware market. This regulatory action reflects broader geopolitical tensions and supply chain security concerns that could reshape technology procurement strategies.",
+        "category": "Broad Tech News"
+      },
+      {
+        "title": "LLMs consistently pick resumes they generate over ones by humans or other models",
+        "url": "https://arxiv.org/abs/2509.00462",
+        "source": "Hacker News",
+        "score": 7,
+        "summary": "Study shows LLMs exhibit bias toward their own generated resumes when evaluating candidates, revealing potential issues with AI decision-making systems. This highlights important concerns about AI reliability and bias in enterprise hiring and evaluation processes.",
+        "category": "Community & Practitioner"
+      },
+      {
+        "title": "Open Design: Use Your Coding Agent as a Design Engine",
+        "url": "https://github.com/nexu-io/open-design",
+        "source": "Hacker News",
+        "score": 7,
+        "summary": "Article discusses using coding agents as design engines, representing a practical application of AI agents in software development workflows. This touches on the evolving capabilities of agentic AI systems beyond pure coding to include design thinking.",
+        "category": "Community & Practitioner"
+      },
+      {
+        "title": "All the evidence revealed so far in Musk v. Altman",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/920775/evidence-exhibits-elon-musk-sam-altman-openai-trial",
+        "source": "The Verge",
+        "score": 7,
+        "summary": "Legal case between Musk and Altman revealing early OpenAI documents and email exchanges from the company's founding period. The evidence provides insights into the strategic decisions and dynamics that shaped one of the most influential AI companies.",
+        "category": "Broad Tech News"
+      }
+    ]
   }
 ]
